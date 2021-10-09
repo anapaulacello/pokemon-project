@@ -1,0 +1,77 @@
+body {
+  font-family: 'Crete Round', serif;
+}
+
+body header {
+  text-align: center;
+}
+
+body header .header__img {
+  width: 300px;
+  height: auto;
+  padding: 20px;
+}
+
+body .display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .display .display__element {
+  background-color: #f7f7f7;
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+  margin: 30px 10px;
+}
+
+body .display .display__element .display__name {
+  text-align: center;
+}
+
+body .display .display__element .display__image {
+  width: 200px;
+  background-image: url("./blob.svg");
+  margin: 10px;
+}
+
+body .display .display__element .display__image:hover {
+  background-image: url("./blobHover.svg");
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+/* @keyframes change{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}  */
+/* @keyframes infiniteScrollBg {
+    0% {
+      background-position: 50% 0;
+    }
+    100%{
+      background-position: 50% (-404px * 2)
+    }
+} */
+/*# sourceMappingURL=styles.css.map */

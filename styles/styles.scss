@@ -1,0 +1,70 @@
+
+body{
+    font-family: 'Crete Round', serif;
+    header{
+        text-align: center;
+        .header__img{
+            width: 300px;
+            height: auto;
+            padding: 20px;
+        }
+    }
+
+    .display{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .display__element{
+            background-color: rgb(247, 247, 247);
+            margin: 10px;
+            display:inline-block;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            border-radius: 20px;
+            margin: 30px 10px;
+
+            .display__name{
+                text-align: center;
+            }
+            .display__image{
+                width: 200px;
+                background-image: url("./blob.svg");
+                margin: 10px;
+            }
+            .display__image:hover{
+                background-image: url("./blobHover.svg");
+                transition: 0.3s;
+                transform: scale(0.99);
+            }
+        }
+        
+    }
+    
+    
+}
+
+
+
+
+/* @keyframes change{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}  */
+
+/* @keyframes infiniteScrollBg {
+    0% {
+      background-position: 50% 0;
+    }
+    100%{
+      background-position: 50% (-404px * 2)
+    }
+} */
