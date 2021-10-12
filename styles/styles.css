@@ -13,6 +13,10 @@ body header .header__img {
   padding: 20px;
 }
 
+body main #spinner {
+  display: none;
+}
+
 body main .hero__container {
   display: -webkit-box;
   display: -ms-flexbox;

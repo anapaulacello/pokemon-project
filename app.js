@@ -12,7 +12,7 @@ const getAllPokemons= async()=>{
         const result=await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
         const pokemonesData= await result.json();
         pokemonList.push(pokemonesData);
-        spinner.style.display="none";
+        
     }
     const pokemons = pokemonList.map((element) => ({
         name: element.name,
@@ -30,7 +30,7 @@ const getAllPokemons= async()=>{
         </div>`
         ).join("");
     display.innerHTML=pokemonHTML
-
+    spinner.style.display="none";
 }
 
 btn.addEventListener('click', getAllPokemons )
@@ -89,7 +89,7 @@ let buscarPokemon=async()=>{
     let result=await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
     let pokemonToJson=await result.json();
     spinner.style.display="none";
-    
+
     let pokemonInfo= {
         name:pokemonToJson.name,
         image: pokemonToJson.sprites.other["official-artwork"]["front_default"],

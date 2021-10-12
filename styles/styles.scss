@@ -12,7 +12,9 @@ body{
         }
     } 
     main{
-
+        #spinner{
+            display: none;
+        }
         .hero__container{
             display: flex;
             flex-direction: column;
