@@ -1,13 +1,18 @@
 const btn=document.querySelector(".allPokemons__btn");
 const display=document.querySelector(".display");
+const spinner=document.querySelector("#spinner");
+spinner.style.display="none";
 
 const getAllPokemons= async()=>{
+    spinner.style.display="block";
+    document.querySelector('.pokebal-gif').style.display="none";
+    
     let pokemonList=[];
     for (let i = 1; i < 151; i++) {
         const result=await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
         const pokemonesData= await result.json();
         pokemonList.push(pokemonesData);
-        
+        spinner.style.display="none";
     }
     const pokemons = pokemonList.map((element) => ({
         name: element.name,
@@ -26,8 +31,6 @@ const getAllPokemons= async()=>{
         ).join("");
     display.innerHTML=pokemonHTML
 
-    document.querySelector('.pokebal-gif').style.display="none";
-    
 }
 
 btn.addEventListener('click', getAllPokemons )
@@ -45,9 +48,13 @@ function rollDice(numero) {
 }
 
 let randomPokemon= async()=>{
-    let numeroRandom=rollDice(151);
+    spinner.style.display="block";
+    document.querySelector('.pokebal-gif').style.display="none";
+
+    let numeroRandom=rollDice(898);
     let result=await fetch(`https://pokeapi.co/api/v2/pokemon/${numeroRandom}/`);
     let pokemonToJson= await result.json();
+    spinner.style.display="none";
 
     let pokemonInfo= {
         name:pokemonToJson.name,
@@ -55,32 +62,41 @@ let randomPokemon= async()=>{
         id:`#${pokemonToJson.id.toString().padStart(3,0)}`
     }
 
-    let displayRandom=document.querySelector(".random");
     
     console.log(pokemonInfo);
        const pokemonHTML = `
        <h1 class="displayRandom__name">${pokemonInfo.name}</h1>
        <h2 class="displayRandom__id">${pokemonInfo.id}</h2>
-       <img class"displayRandom__img" src="${pokemonInfo.image}"/>`;
+       <img class="displayRandom__image" src="${pokemonInfo.image}" alt="${pokemonInfo.name}"/>`;
     displayRandom.innerHTML=pokemonHTML;
 
-    document.querySelector('.pokebal-gif').style.display="none";
+    
 
 }
 
 
 randomBtn.addEventListener('click',randomPokemon);
-// <img src="${pokemonInfo.image}"/>
 
-/* const getAllData=async()=>{
-    const result=await fetch(`https://api.agify.io?name=michael`);
-    const reultJson=await result.json();
+//!buscar pokemon
 
-    const dataHTML=`<p>${reultJson.name}</p>
-                    <p>${reultJson.age}</p>
-                    <p>${reultJson.count}</p> `;
-    newDiv.innerHTML=dataHTML;
-};
-getAllData(); */
+let displayBuscar=document.querySelector(".buscar");
 
+let buscarPokemon=async()=>{
+    let id=document.querySelector(".buscar__input").value;
+    let result=await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    let pokemonToJson=await result.json();
 
+    let pokemonInfo= {
+        name:pokemonToJson.name,
+        image: pokemonToJson.sprites.other["official-artwork"]["front_default"],
+        id:`#${pokemonToJson.id.toString().padStart(3,0)}`
+    }
+
+    const pokemonHTML = `
+       <h1 class="displayRandom__name">${pokemonInfo.name}</h1>
+       <h2 class="displayRandom__id">${pokemonInfo.id}</h2>
+       <img class="displayRandom__image" src="${pokemonInfo.image}" alt="${pokemonInfo.name}"/>`;
+    displayBuscar.innerHTML=pokemonHTML;
+}
+
+document.querySelector(".buscar__btn").addEventListener('click',buscarPokemon)

@@ -13,24 +13,6 @@ body header .header__img {
   padding: 20px;
 }
 
-body main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: colum;
-          flex-direction: colum;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
 body main .hero__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -41,6 +23,9 @@ body main .hero__container {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body main .hero__container .button__container {
@@ -53,8 +38,9 @@ body main .hero__container .button__container {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body main .hero__container .button__container .allPokemons__btn {
@@ -64,7 +50,7 @@ body main .hero__container .button__container .allPokemons__btn {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
-  padding: 0.9rem 4rem;
+  padding: 5px 22px;
   margin: 15px;
 }
 
@@ -75,17 +61,21 @@ body main .hero__container .button__container .randonPokemon__btn {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
-  padding: 0.9rem 4rem;
+  padding: 5px 15px;
   margin: 15px;
+}
+
+body main .hero__container .button__container .pokebal-gif {
+  width: 200px;
+  height: 200px;
 }
 
 body main .hero__container .pokebal-gif {
   width: 200px;
   height: 200px;
-  text-align: center;
 }
 
-body .allPokemos .display {
+body main .all__container .allPokemos .display {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,7 +89,7 @@ body .allPokemos .display {
       justify-content: space-around;
 }
 
-body .allPokemos .display .display__element {
+body main .all__container .allPokemos .display .display__element {
   background-color: #f7f7f7;
   margin: 10px;
   display: inline-block;
@@ -110,21 +100,23 @@ body .allPokemos .display .display__element {
   margin: 30px 10px;
 }
 
-body .allPokemos .display .display__element .display__name {
+body main .all__container .allPokemos .display .display__element .display__name {
   text-align: center;
+  padding: 5px;
 }
 
-body .allPokemos .display .display__element .display__id {
+body main .all__container .allPokemos .display .display__element .display__id {
   text-align: center;
+  color: #424242;
 }
 
-body .allPokemos .display .display__element .display__image {
+body main .all__container .allPokemos .display .display__element .display__image {
   width: 200px;
   background-image: url("./blob.svg");
   margin: 10px;
 }
 
-body .allPokemos .display .display__element .display__image:hover {
+body main .all__container .allPokemos .display .display__element .display__image:hover {
   background-image: url("./blobHover.svg");
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -132,7 +124,11 @@ body .allPokemos .display .display__element .display__image:hover {
           transform: scale(0.99);
 }
 
-body .randonPokemon .random {
+body main .all__container .randonPokemon {
+  text-align: center;
+}
+
+body main .all__container .randonPokemon .random {
   background-color: #f7f7f7;
   margin: 10px;
   display: inline-block;
@@ -143,47 +139,27 @@ body .randonPokemon .random {
   margin: 30px 10px;
 }
 
-body .randonPokemon .random .displayRandom__name,
-body .randonPokemon .random .displayRandom__id {
+body main .all__container .randonPokemon .random .displayRandom__name {
   text-align: center;
+  padding: 5px;
 }
 
-body .randonPokemon .random .displayRandom__image {
+body main .all__container .randonPokemon .random .displayRandom__id {
+  text-align: center;
+  color: #424242;
+}
+
+body main .all__container .randonPokemon .random .displayRandom__image {
   width: 200px;
   background-image: url("./blob.svg");
   margin: 10px;
 }
 
-body .randonPokemon .random .displayRandom__image:hover {
+body main .all__container .randonPokemon .random .displayRandom__image:hover {
   background-image: url("./blobHover.svg");
   -webkit-transition: 0.3s;
   transition: 0.3s;
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
 }
-
-body .pokebal-gif {
-  width: 200px;
-  height: 200px;
-}
-
-/* @keyframes change{
-    0%{
-        background-position: 0 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0 50%;
-    }
-}  */
-/* @keyframes infiniteScrollBg {
-    0% {
-      background-position: 50% 0;
-    }
-    100%{
-      background-position: 50% (-404px * 2)
-    }
-} */
 /*# sourceMappingURL=styles.css.map */
