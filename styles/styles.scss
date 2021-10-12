@@ -1,46 +1,131 @@
 
 body{
     font-family: 'Crete Round', serif;
+    background-color:rgb(114, 187, 247);
     header{
         text-align: center;
         .header__img{
             width: 300px;
             height: auto;
             padding: 20px;
+            
         }
-    }
-
-    .display{
-        display:flex;
-        flex-direction: row;
+    } 
+    main{
+        display: flex;
+        flex-direction: colum;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
-        justify-content: space-around;
 
-        .display__element{
-            background-color: rgb(247, 247, 247);
-            margin: 10px;
-            display:inline-block;
-            position: relative;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            border-radius: 20px;
-            margin: 30px 10px;
+        .hero__container{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
 
-            .display__name{
+            .button__container{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                .allPokemons__btn{
+                    background-color:   #17318500 ;
+                    border: 3px solid  #173085 ;
+                    color:  #173085 ;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    letter-spacing: 0.1rem;
+                    padding: 0.9rem 4rem;
+                    margin: 15px;
+                }
+                .randonPokemon__btn{
+                    background-color:   #17318500 ;
+                    border: 3px solid  #173085 ;
+                    color:  #173085 ;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    letter-spacing: 0.1rem;
+                    padding: 0.9rem 4rem;
+                    margin: 15px;
+                }
+            }
+            .pokebal-gif{
+                width: 200px;
+                height: 200px;
                 text-align: center;
             }
-            .display__image{
-                width: 200px;
-                background-image: url("./blob.svg");
-                margin: 10px;
-            }
-            .display__image:hover{
-                background-image: url("./blobHover.svg");
-                transition: 0.3s;
-                transform: scale(0.99);
+        }
+    }
+
+        .allPokemos{
+            
+            .display{
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+        
+                .display__element{
+                    background-color: rgb(247, 247, 247);
+                    margin: 10px;
+                    display:inline-block;
+                    position: relative;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                    border-radius: 20px;
+                    margin: 30px 10px;
+        
+                    .display__name{
+                        text-align: center;
+                    }
+                    .display__id{
+                        text-align: center;
+                    }
+                    .display__image{
+                        width: 200px;
+                        background-image: url("./blob.svg");
+                        margin: 10px;
+                    }
+                    .display__image:hover{
+                        background-image: url("./blobHover.svg");
+                        transition: 0.3s;
+                        transform: scale(0.99);
+                    }
+                }
+                
             }
         }
+        .randonPokemon{
+            .random{
+                background-color: rgb(247, 247, 247);
+                margin: 10px;
+                display:inline-block;
+                position: relative;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+                border-radius: 20px;
+                margin: 30px 10px; 
+
+                .displayRandom__name,
+                .displayRandom__id{
+                    text-align: center;
+                }
+                .displayRandom__image{
+                    width: 200px;
+                    background-image: url("./blob.svg");
+                    margin: 10px;
+                }
+                .displayRandom__image:hover{
+                    background-image: url("./blobHover.svg");
+                    transition: 0.3s;
+                    transform: scale(0.99);
+                }
+                
+            }
+        }
+        .pokebal-gif{
+            width: 200px;
+            height: 200px;
         
-    }
+        }
     
     
 }
