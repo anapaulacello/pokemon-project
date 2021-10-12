@@ -82,10 +82,14 @@ randomBtn.addEventListener('click',randomPokemon);
 let displayBuscar=document.querySelector(".buscar");
 
 let buscarPokemon=async()=>{
+    spinner.style.display="block";
+    document.querySelector('.pokebal-gif').style.display="none";
+
     let id=document.querySelector(".buscar__input").value;
     let result=await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
     let pokemonToJson=await result.json();
-
+    spinner.style.display="none";
+    
     let pokemonInfo= {
         name:pokemonToJson.name,
         image: pokemonToJson.sprites.other["official-artwork"]["front_default"],
@@ -93,9 +97,9 @@ let buscarPokemon=async()=>{
     }
 
     const pokemonHTML = `
-       <h1 class="displayRandom__name">${pokemonInfo.name}</h1>
-       <h2 class="displayRandom__id">${pokemonInfo.id}</h2>
-       <img class="displayRandom__image" src="${pokemonInfo.image}" alt="${pokemonInfo.name}"/>`;
+       <h1 class="displayBuscar__name">${pokemonInfo.name}</h1>
+       <h2 class="displayBuscar__id">${pokemonInfo.id}</h2>
+       <img class="displayBuscar__image" src="${pokemonInfo.image}" alt="${pokemonInfo.name}"/>`;
     displayBuscar.innerHTML=pokemonHTML;
 }
 
