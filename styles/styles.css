@@ -71,7 +71,7 @@ body main .hero__container .button__container .randonPokemon__btn {
 }
 
 body main .hero__container .buscar__input {
-  background-color: #17318500;
+  background-color: white;
   border: 3px solid  #173085;
   color: #173085;
   font-size: 1rem;

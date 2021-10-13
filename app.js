@@ -2,13 +2,14 @@ const btn=document.querySelector(".allPokemons__btn");
 const display=document.querySelector(".display");
 const spinner=document.querySelector("#spinner");
 spinner.style.display="none";
-
+let lastPokemon=10;
+//!todos los pokemos
 const getAllPokemons= async()=>{
     spinner.style.display="block";
     document.querySelector('.pokebal-gif').style.display="none";
     
     let pokemonList=[];
-    for (let i = 1; i < 151; i++) {
+    for (let i = 1; i <=lastPokemon; i++) {
         const result=await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
         const pokemonesData= await result.json();
         pokemonList.push(pokemonesData);
@@ -33,11 +34,19 @@ const getAllPokemons= async()=>{
     spinner.style.display="none";
 }
 
+
+
 btn.addEventListener('click', getAllPokemons )
 
-/* document.querySelector('.atras__btn').addEventListener('click',()=>{
-    displayRandom.remove();
-}) */
+//!funcion para hacer scroll ( ͡๑ ﹏ ͡๑)
+window.addEventListener("scroll", () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  
+    if (scrollTop + clientHeight + 0.5 >= scrollHeight) {
+      lastPokemon += 10;
+      getAllPokemons();
+    }
+  });
 
 //!random pokemon
 let randomBtn=document.querySelector(".randonPokemon__btn");
@@ -70,8 +79,6 @@ let randomPokemon= async()=>{
        <img class="displayRandom__image" src="${pokemonInfo.image}" alt="${pokemonInfo.name}"/>`;
     displayRandom.innerHTML=pokemonHTML;
 
-    
-
 }
 
 
@@ -85,6 +92,10 @@ let buscarPokemon=async()=>{
     let id=document.querySelector(".buscar__input").value;
     if (id>898) {
         window.alert("solo hay 898 pokemons");
+        spinner.style.display="none";
+    }
+    if (id==0) {
+        window.alert("no existe el pokemon con id=0");
         spinner.style.display="none";
     }
 
